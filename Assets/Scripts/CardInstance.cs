@@ -14,7 +14,7 @@ public class CardInstance
 
     public bool IsDead => CurrentHealth <= 0;
 
-    public CardInstance (CardData Data, CardTeam Team)
+    public CardInstance (CardData Data)
     {
         CurrentHealth = Data.MaxHealth;
         CurrentDamage = Data.MaxDamage;
