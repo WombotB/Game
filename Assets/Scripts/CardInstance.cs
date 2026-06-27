@@ -5,7 +5,7 @@ public class CardInstance
 {
     public CardData Data;
 
-    public CardTeam Team;
+    public CardTeam Team;   
 
     public int CurrentHealth;
     public int CurrentDamage;
@@ -16,7 +16,7 @@ public class CardInstance
 
     public CardInstance (CardData Data, CardTeam Team)
     {
-        CurrentHealth = Data.Health;
-        CurrentDamage = Data.Damage;
+        CurrentHealth = Data.MaxHealth;
+        CurrentDamage = Data.MaxDamage;
     }
 }
