@@ -2,7 +2,7 @@ using UnityEngine;
 #nullable enable
 
 
-public class GameBoard : MonoBehaviour
+public class GameBoard
 {
     public CardInstance?[,] Board;
 
@@ -19,14 +19,4 @@ public class GameBoard : MonoBehaviour
 
     public void ClearCell(int row, int col) { Board[row, col] = null; }
 
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

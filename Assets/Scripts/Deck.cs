@@ -1,28 +1,29 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System;
+
 #nullable enable
 
 public class Deck
 {
-    private Queue<CardInstance> cards;
+    private Queue<CardInstance> cards = new();
 
-    private CardData[] initialCards;
+    private List<CardData> initialCards;
 
-    public int Count;
+    public int Count => cards.Count;
 
     public Deck(List<CardData> cards)
     {
-        initialCards = cards;
+        initialCards = new List<CardData>(cards);
     }
 
     public CardInstance Draw()
     {
-        Count -= 1;
         return cards.Dequeue();
     }
 
     public void Return(CardInstance card)
     {
-        Count += 1;
         cards.Enqueue(card);
     }
 
@@ -32,9 +33,10 @@ public class Deck
 
     public void Reset()
     {
+        cards.Clear();
+
         foreach (CardData data in initialCards)
         {
-            Count += 1;
             cards.Enqueue(new CardInstance(data));
         }
     }
