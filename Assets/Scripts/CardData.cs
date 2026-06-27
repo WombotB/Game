@@ -1,4 +1,5 @@
 using UnityEngine;
+using Enums;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Scriptable Objects/CardData")]
 public class CardData : ScriptableObject

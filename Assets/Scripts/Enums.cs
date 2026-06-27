@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public enum CardWeight
+namespace Enums
 {
-    Light,
-    Heavy
-}
+    public enum CardWeight
+    {
+        Light,
+        Heavy
+    }
 
-public enum CardTeam
-{
-    Blue,
-    Red
-}
+    public enum CardTeam
+    {
+        Blue,
+        Red
+    }
 
-public enum CardClass
-{
-    Melee,
-    Ranged
+    public enum CardClass
+    {
+        Melee,
+        Ranged
+    }
 }
 
