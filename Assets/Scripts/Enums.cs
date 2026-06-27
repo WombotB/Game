@@ -11,7 +11,8 @@ namespace Enums
     public enum CardTeam
     {
         Blue,
-        Red
+        Red,
+        Neutral
     }
 
     public enum CardClass

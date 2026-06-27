@@ -1,26 +1,57 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Enums;
 
 public class CardView : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private float hoverScale = 1.1f;
+    [SerializeField] private float selectedYOffset = 30f;
+
+    [SerializeField] private bool isSelected = false;
+    private Vector2Int originalPosition;
+    private Quaternion originalRotation;
+
+    private Transform originalParent;
+    private RectTransform rectTransform;
+
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private Outline outline;
+
     public Image cardImage;
-    public Text cardNameText;
+    public Text nameText;
+    public Text descriptionText;
     public Text healthText;
     public Text damageText;
 
     public CardInstance Card { get; private set; }
 
-    // Событие клика (подписывается GameManager)
     public System.Action<CardView> OnCardClicked;
+    public System.Action<CardView> OnCardDropped;
 
-    // Инициализация карты из модели
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        canvas = FindObjectOfType<Canvas>();
+
+        if (outline == null)
+            outline = GetComponent<Outline>();
+    }
+
     public void Initialize(CardInstance card)
     {
         Card = card;
+        UpdateView();
+    }
 
-        if (cardNameText != null)
-            cardNameText.text = Card.Data.Name;
+    public void UpdateView()
+    {
+        if (Card == null || Card.Data == null) return;
+
+        if (nameText != null)
+            nameText.text = Card.Data.Name;
 
         if (healthText != null)
             healthText.text = Card.CurrentHealth.ToString();
@@ -30,19 +61,40 @@ public class CardView : MonoBehaviour, IPointerClickHandler
 
         if (cardImage != null && Card.Data.Icon != null)
             cardImage.sprite = Card.Data.Icon;
+
+        if (descriptionText != null)
+            descriptionText.text = Card.Data.Description;
     }
 
-    public void UpdateView()
+    public void Select()
     {
-        if (Card == null) return;
+        isSelected = true;
+        rectTransform.localPosition = new Vector2(0, selectedYOffset);
 
-        if (healthText != null) { healthText.text = Card.CurrentHealth.ToString(); }
-
-        if (damageText != null) { damageText.text = Card.CurrentDamage.ToString(); }
+        if (outline != null)
+        {
+            outline.enabled = true;
+            outline.effectColor = Color.yellow;
+            outline.effectDistance = new Vector2(5, 5);
+        }
     }
-    
+    public void Deselect()
+    {
+        isSelected = false;
+        rectTransform.localPosition = Vector2.zero;
+
+        if (outline != null)
+            outline.enabled = false;
+    }
+
+    public void SetInHand(bool inHand)
+    {
+        //пусто
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         OnCardClicked?.Invoke(this);
     }
+
 }
