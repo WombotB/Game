@@ -1,24 +1,41 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    private bool pressed = false;
-    [SerializeField] private GameObject pause;
     [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject pauseMenu;
+    private bool opened = false;
+
+    void Start()
+    {
+
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !pressed && !settingsMenu.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pressed = true;
-            OpenClose();
+            if (!pauseMenu.activeSelf)
+            {
+                Open();
+            }
+            else if (!opened)
+            {
+                Close();
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            pressed = false;
-        }
+        opened = settingsMenu.activeSelf;
     }
-    public void OpenClose()
+    public void Exit()
     {
-        pause.SetActive(!pause.activeSelf);
+        SceneManager.LoadScene("Menu");
+    }
+    public void Close()
+    {
+        pauseMenu.SetActive(false);
+    }
+    public void Open()
+    {
+        pauseMenu.SetActive(true);
     }
 }

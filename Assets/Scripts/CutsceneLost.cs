@@ -1,19 +1,16 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
-public class Cutscene1 : MonoBehaviour
+public class CutsceneLost : MonoBehaviour
 {
     [SerializeField] private TMP_Text Words;
     [SerializeField] private GameObject SFXM;
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject pause;
     [SerializeField] private Image background;
-    [SerializeField] private Sprite sprite1;
-    [SerializeField] private Sprite sprite2;
-    [SerializeField] private Sprite sprite3;
-    [SerializeField] private Sprite sprite4;
     [SerializeField] private Sprite dialogueClosed;
     [SerializeField] private Sprite dialogueOpened;
     [SerializeField] private Sprite dialogueTeeth;
@@ -22,7 +19,8 @@ public class Cutscene1 : MonoBehaviour
     private bool speaks = false;
     void Start()
     {
-        PlayerPrefs.SetInt("CurrentLevel", 1);
+        speaks = true;
+        timer = 0.2f;
     }
 
     void Update()
@@ -33,47 +31,10 @@ public class Cutscene1 : MonoBehaviour
             switch (i)
             {
                 //case 1:
-                //    background.sprite = sprite1;
+                //    background.sprite = dialogueopened;
+                //    Words.text = "Попробуешь еще?";
                 //    break;
                 case 2:
-                    background.sprite = sprite2;
-                    break;
-                case 3:
-                    background.sprite = sprite3;
-                    Words.text = "Что? Цветочек?... Кто это сделал?..";
-                    break;
-                case 4:
-                    background.sprite = sprite4;
-                    Words.text = "Это что, нейрослоп?";
-                    break;
-                case 5:
-                    background.sprite = dialogueClosed;
-                    Words.text = "...";
-                    break;
-                case 6:
-                    Words.text = "Верни нейрослоп…";
-                    break;
-                case 7:
-                    speaks = true;
-                    timer = 0.2f;
-                    Words.text = "Поздно.";
-                    break;
-                case 8:
-                    speaks = false;
-                    background.sprite = dialogueClosed;
-                    Words.text = "Ты мой лоб разрисовала?";
-                    break;
-                case 9:
-                    speaks = true;
-                    timer = 0.2f;
-                    background.sprite = dialogueOpened;
-                    Words.text = "Не уверена.";
-                    break;
-                case 10:
-                    Words.text = "Обыграешь меня в карты - скажу.";
-                    break;
-                case 11:
-                    speaks = false;
                     background.sprite = dialogueClosed;
                     Words.text = "";
                     playButton.SetActive(true);
@@ -97,6 +58,6 @@ public class Cutscene1 : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level"+PlayerPrefs.GetInt("CurrentLevel"));
     }
 }

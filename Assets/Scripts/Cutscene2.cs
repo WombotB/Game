@@ -1,9 +1,9 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
-public class Cutscene1 : MonoBehaviour
+public class Cutscene2 : MonoBehaviour
 {
     [SerializeField] private TMP_Text Words;
     [SerializeField] private GameObject SFXM;
@@ -12,17 +12,18 @@ public class Cutscene1 : MonoBehaviour
     [SerializeField] private Image background;
     [SerializeField] private Sprite sprite1;
     [SerializeField] private Sprite sprite2;
-    [SerializeField] private Sprite sprite3;
-    [SerializeField] private Sprite sprite4;
     [SerializeField] private Sprite dialogueClosed;
     [SerializeField] private Sprite dialogueOpened;
     [SerializeField] private Sprite dialogueTeeth;
     private int i = 1;
     private float timer = 1;
+    private bool fires = false;
     private bool speaks = false;
     void Start()
     {
-        PlayerPrefs.SetInt("CurrentLevel", 1);
+        PlayerPrefs.SetInt("CurrentLevel", 2);
+        speaks = true;
+        timer = 0.2f;
     }
 
     void Update()
@@ -34,45 +35,28 @@ public class Cutscene1 : MonoBehaviour
             {
                 //case 1:
                 //    background.sprite = sprite1;
+                //    Words.text = "О, ясно, очень умно.";
                 //    break;
                 case 2:
-                    background.sprite = sprite2;
+                    background.sprite = sprite1;
+                    Words.text = "Огнетушитель в доме с газовым отоплением.";
+                    fires = true;
+                    timer = 1;
                     break;
                 case 3:
-                    background.sprite = sprite3;
-                    Words.text = "Что? Цветочек?... Кто это сделал?..";
+                    Words.text = "Иллюзия безопасности.";
                     break;
                 case 4:
-                    background.sprite = sprite4;
-                    Words.text = "Это что, нейрослоп?";
+                    Words.text = "Что он делает в раковине?";
                     break;
                 case 5:
-                    background.sprite = dialogueClosed;
-                    Words.text = "...";
-                    break;
-                case 6:
-                    Words.text = "Верни нейрослоп…";
-                    break;
-                case 7:
-                    speaks = true;
-                    timer = 0.2f;
-                    Words.text = "Поздно.";
-                    break;
-                case 8:
-                    speaks = false;
-                    background.sprite = dialogueClosed;
-                    Words.text = "Ты мой лоб разрисовала?";
-                    break;
-                case 9:
+                    fires = false;
                     speaks = true;
                     timer = 0.2f;
                     background.sprite = dialogueOpened;
-                    Words.text = "Не уверена.";
+                    Words.text = "До победы тебе еще две игры.";
                     break;
-                case 10:
-                    Words.text = "Обыграешь меня в карты - скажу.";
-                    break;
-                case 11:
+                case 6:
                     speaks = false;
                     background.sprite = dialogueClosed;
                     Words.text = "";
@@ -80,9 +64,19 @@ public class Cutscene1 : MonoBehaviour
                     break;
             }
         }
-        if (speaks)
+        if (fires)
         {
-            timer -= Time.deltaTime;
+            timer-=Time.deltaTime;
+            if (timer <= 0)
+            {
+                timer = 1;
+                if(background.sprite == sprite1) background.sprite = sprite2;
+                else background.sprite = sprite1;
+            }
+        }
+        else if (speaks)
+        {
+            timer-=Time.deltaTime;
             if (timer <= 0)
             {
                 timer = 0.2f;
@@ -97,6 +91,6 @@ public class Cutscene1 : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level2");
     }
 }
