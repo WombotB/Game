@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Enums;
 
-public class CardView : MonoBehaviour, IPointerClickHandler
+public class CardView : MonoBehaviour
 {
     [SerializeField] private float hoverScale = 1.1f;
     [SerializeField] private float selectedYOffset = 30f;
@@ -28,7 +28,6 @@ public class CardView : MonoBehaviour, IPointerClickHandler
     public CardInstance Card { get; private set; }
 
     public System.Action<CardView> OnCardClicked;
-    public System.Action<CardView> OnCardDropped;
 
     private void Awake()
     {
