@@ -2,39 +2,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int Turn;
+    public static GameManager instance;
 
-    public GameBoard gameBoard;
+    public Match Match;
+    public TurnManager TurnManager;
+    public CombatResolver CombatResolver;
+    public GameBoard GameBoard;
 
-    public bool IsEnded;
-    public bool IsWin;
+    public Player Player;
+    public Player Reflection;
 
-    public GameManager()
+    /*public GameManager()
     {
         Turn = 0;
         IsEnded = false;
         IsWin = false;
-    }
-
-    public void PlayerTurn ()
-    {
-        //Игрок должен поставить карту
-    }
-
-    public void MirrorTurn ()
-    {
-        //Противник ставит карту
-    }
-
-    public void ResolveRanged()
-    {
-        //Ход карт дальнего боя
-    }
-
-    public void ResolveMelee()
-    {
-        //Ход карт ближнего боя
-    }
+    }*/
 
     public void CheckWin()
     {
@@ -44,7 +27,6 @@ public class GameManager : MonoBehaviour
     public void EndTurn()
     {
         //Заканчивает ход
-        Turn += 1;
     }
 
     void Start()

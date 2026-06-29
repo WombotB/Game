@@ -9,7 +9,7 @@ public class Player
 
     public Deck Deck;
 
-    public List<CardInstance> Hand = new();
+    public Hand Hand = new Hand();
 
     public Player (CardTeam team, Deck deck)
     {
@@ -17,11 +17,4 @@ public class Player
         Deck = deck;
     }
 
-    public void Draw()
-    {
-        if (Hand.Count < 3 && Deck.Count > 0)
-        {
-            Hand.Add(Deck.Draw());
-        }
-    }
 }
