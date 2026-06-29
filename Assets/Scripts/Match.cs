@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Match
 {
+    public Player Human;
+    public Player Reflection;
+
     public int Turn;
 
     public GameBoard Board;

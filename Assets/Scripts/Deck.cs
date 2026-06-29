@@ -7,7 +7,6 @@ using System;
 public class Deck
 {
     private Queue<CardInstance> cards = new();
-
     private List<CardData> initialCards;
 
     public int Count => cards.Count;
@@ -16,6 +15,7 @@ public class Deck
     {
         initialCards = new List<CardData>(cards);
     }
+
 
     public CardInstance Draw()
     {
@@ -28,7 +28,6 @@ public class Deck
     }
 
     public void AddCard(CardData card) {initialCards.Add(card);}
-
     public void RemoveCard(CardData card) {initialCards.Remove(card);}
 
     public void Reset()
