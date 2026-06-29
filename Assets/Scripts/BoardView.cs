@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BoardView : MonoBehaviour
 {
+    private Dictionary<CardInstance, CardView> cardViews;
 
     private CardView selectedCard;
 

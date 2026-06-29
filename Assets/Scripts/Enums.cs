@@ -10,8 +10,8 @@ namespace Enums
 
     public enum CardTeam
     {
-        Blue,
-        Red,
+        Humans,
+        Monsters,
         Neutral
     }
 
