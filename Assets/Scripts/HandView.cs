@@ -4,7 +4,7 @@ using System;
 
 public class HandView : MonoBehaviour
 {
-    public List<CardInstance> Hand = Player.Hand;
+    //public List<CardInstance> Hand = Player.Hand;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
