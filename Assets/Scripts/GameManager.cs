@@ -3,15 +3,12 @@ using Enums;
 
 public class GameManager : MonoBehaviour
 {
-    //
+    public static GameManager Instance { get; private set; }
 
     public Match Match;
     public TurnManager TurnManager;
     public CombatResolver CombatResolver;
     public GameBoard Board;
-
-    public Player player;
-    public Player reflection;
 
     public GameManager(Match match, TurnManager turnManager, CombatResolver combatResolver, GameBoard board)
     {
@@ -23,8 +20,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerMaker(DeckInstance HumanDeck, DeckInstance ReflectionDeck)
     {
-        player = new Player(CardTeam.Human, HumanDeck);
-        reflection = new Player(CardTeam.Reflection, ReflectionDeck);
+        Match.Player = new Player(CardTeam.Human, HumanDeck);
+        Match.Reflection = new Player(CardTeam.Reflection, ReflectionDeck);
     }
 
     public void CheckWin()
@@ -37,9 +34,23 @@ public class GameManager : MonoBehaviour
         //Заканчивает ход
     }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
-        GameManager instance = new GameManager(new Match(), new TurnManager(), new CombatResolver(), new GameBoard());
+        Match = new Match();
+
+        Match.Board = new GameBoard();
+
+        Match.Player = new Player(CardTeam.Human, new DeckInstance(humanDeck));
+
+        Match.Reflection = new Player(CardTeam.Reflection, new DeckInstance(reflectionDeck));
+
+        TurnManager = new TurnManager();
+        CombatResolver = new CombatResolver();
     }
 
     void Update()

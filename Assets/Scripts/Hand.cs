@@ -7,10 +7,16 @@ public class Hand
     public List<CardInstance> Cards = new();
 
     public int MaxNumberOfCards;
+    public int Count => Cards.Count;
+
+    public Hand (int maxNumberOfCards)
+    {
+        MaxNumberOfCards = maxNumberOfCards;
+    }
 
     public void Draw(DeckInstance deck)
     {
-        if (IsFull() && deck.Count > 0)
+        if (!IsFull() && deck.Count > 0)
         {
             Cards.Add(deck.Draw());
         }

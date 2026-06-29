@@ -9,7 +9,7 @@ public class Player
 
     public DeckInstance Deck;
 
-    public Hand Hand = new Hand();
+    public Hand Hand = new Hand(3);
 
     public Player (CardTeam team, DeckInstance deck)
     {

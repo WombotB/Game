@@ -9,7 +9,7 @@ public class CardView : MonoBehaviour
     [SerializeField] private float selectedYOffset = 30f;
 
     [SerializeField] private bool isSelected = false;
-    private Vector2Int originalPosition;
+    private Vector2 originalPosition;
     private Quaternion originalRotation;
 
     private Transform originalParent;

@@ -8,9 +8,10 @@ public class DeckInstance
 {
     public DeckData Deck;
 
-    private Queue<CardInstance> cards = new();
+    private Queue<CardInstance> Cards = new();
+    private List<CardInstance> BaseCards = new();
 
-    public int Count => cards.Count;
+    public int Count => Cards.Count;
 
     public DeckInstance(DeckData deck)
     {
@@ -19,24 +20,24 @@ public class DeckInstance
 
     public CardInstance Draw()
     {
-        return cards.Dequeue();
+        return Cards.Dequeue();
     }
 
     public void Return(CardInstance card)
     {
-        cards.Enqueue(card);
+        Cards.Enqueue(card);
     }
 
-    public void AddCard(CardData card) { Deck.initialCards.Add(card); }
-    public void RemoveCard(CardData card) { Deck.initialCards.Remove(card); }
+    public void AddCard(CardInstance card) { BaseCards.Add(card); }
+    public void RemoveCard(CardInstance card) { BaseCards.Remove(card); }
 
     public void Reset()
     {
-        cards.Clear();
+        Cards.Clear();
 
-        foreach (CardData data in Deck.initialCards)
+        foreach (CardInstance card in BaseCards)
         {
-            cards.Enqueue(new CardInstance(data));
+            Cards.Enqueue(card);
         }
     }
 }

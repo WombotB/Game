@@ -1,15 +1,12 @@
 using UnityEngine;
+using Enums;
 
 public class Match
 {
-    public Player Human;
-    public Player Reflection;
+    public Player Player;// = new Player(CardTeam.Human, new DeckInstance(HumanDeck));
+    public Player Reflection;// = new Player(CardTeam.Reflection, ;
 
     public int Turn;
 
     public GameBoard Board;
-
-    public Player Humans;
-
-    public Player Monsters;
 }
