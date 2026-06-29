@@ -7,11 +7,11 @@ public class Player
 {
     public CardTeam Team;
 
-    public Deck Deck;
+    public DeckInstance Deck;
 
     public Hand Hand = new Hand();
 
-    public Player (CardTeam team, Deck deck)
+    public Player (CardTeam team, DeckInstance deck)
     {
         Team = team;
         Deck = deck;

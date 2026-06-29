@@ -8,7 +8,7 @@ public class Hand
 
     public int MaxNumberOfCards;
 
-    public void Draw(Deck deck)
+    public void Draw(DeckInstance deck)
     {
         if (IsFull() && deck.Count > 0)
         {

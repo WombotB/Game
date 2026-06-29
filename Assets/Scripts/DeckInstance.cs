@@ -4,18 +4,18 @@ using System;
 
 #nullable enable
 
-public class Deck
+public class DeckInstance
 {
+    public DeckData Deck;
+
     private Queue<CardInstance> cards = new();
-    private List<CardData> initialCards;
 
     public int Count => cards.Count;
 
-    public Deck(List<CardData> cards)
+    public DeckInstance(DeckData deck)
     {
-        initialCards = new List<CardData>(cards);
+        Deck=deck;
     }
-
 
     public CardInstance Draw()
     {
@@ -27,14 +27,14 @@ public class Deck
         cards.Enqueue(card);
     }
 
-    public void AddCard(CardData card) {initialCards.Add(card);}
-    public void RemoveCard(CardData card) {initialCards.Remove(card);}
+    public void AddCard(CardData card) { Deck.initialCards.Add(card); }
+    public void RemoveCard(CardData card) { Deck.initialCards.Remove(card); }
 
     public void Reset()
     {
         cards.Clear();
 
-        foreach (CardData data in initialCards)
+        foreach (CardData data in Deck.initialCards)
         {
             cards.Enqueue(new CardInstance(data));
         }

@@ -1,23 +1,31 @@
 using UnityEngine;
+using Enums;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    //
 
     public Match Match;
     public TurnManager TurnManager;
     public CombatResolver CombatResolver;
-    public GameBoard GameBoard;
+    public GameBoard Board;
 
-    public Player Player;
-    public Player Reflection;
+    public Player player;
+    public Player reflection;
 
-    /*public GameManager()
+    public GameManager(Match match, TurnManager turnManager, CombatResolver combatResolver, GameBoard board)
     {
-        Turn = 0;
-        IsEnded = false;
-        IsWin = false;
-    }*/
+        Match = match;
+        TurnManager = turnManager;
+        CombatResolver = combatResolver;
+        Board = board;
+    }
+
+    public void PlayerMaker(DeckInstance HumanDeck, DeckInstance ReflectionDeck)
+    {
+        player = new Player(CardTeam.Human, HumanDeck);
+        reflection = new Player(CardTeam.Reflection, ReflectionDeck);
+    }
 
     public void CheckWin()
     {
@@ -31,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        var game = new GameManager();
+        GameManager instance = new GameManager(new Match(), new TurnManager(), new CombatResolver(), new GameBoard());
     }
 
     void Update()
