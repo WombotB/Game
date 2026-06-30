@@ -12,8 +12,9 @@ public class CardInstance
 
     public Vector2Int Position;
 
-    public int row;
-    public int col;
+    public int Row;
+    public int Col;
+    public int Direction;
 
     public bool IsDead => CurrentHealth <= 0;
 
