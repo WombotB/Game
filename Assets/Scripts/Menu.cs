@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
     }
     public void Newgame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Cutscene1");
     }
     public void Gallery()
     {
