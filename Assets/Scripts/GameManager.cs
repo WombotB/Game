@@ -5,24 +5,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [SerializeField] private DeckData humanDeck;
+    [SerializeField] private DeckData reflectionDeck;
+
     public Match Match;
     public TurnManager TurnManager;
     public CombatResolver CombatResolver;
     public GameBoard Board;
-
-    public GameManager(Match match, TurnManager turnManager, CombatResolver combatResolver, GameBoard board)
-    {
-        Match = match;
-        TurnManager = turnManager;
-        CombatResolver = combatResolver;
-        Board = board;
-    }
-
-    public void PlayerMaker(DeckInstance HumanDeck, DeckInstance ReflectionDeck)
-    {
-        Match.Player = new Player(CardTeam.Human, HumanDeck);
-        Match.Reflection = new Player(CardTeam.Reflection, ReflectionDeck);
-    }
 
     public void CheckWin()
     {
@@ -36,21 +25,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+
     }
 
     void Start()
     {
-        Match = new Match();
-
-        Match.Board = new GameBoard();
-
-        Match.Player = new Player(CardTeam.Human, new DeckInstance(humanDeck));
-
-        Match.Reflection = new Player(CardTeam.Reflection, new DeckInstance(reflectionDeck));
+        Match = new Match(humanDeck, reflectionDeck);
 
         TurnManager = new TurnManager();
+
         CombatResolver = new CombatResolver();
+
+        Instance = this;
     }
 
     void Update()

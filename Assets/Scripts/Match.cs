@@ -9,4 +9,12 @@ public class Match
     public int Turn;
 
     public GameBoard Board;
+
+    public Match(DeckData humanDeck, DeckData reflectionDeck)
+    {
+        Player = new Player(CardTeam.Human, new DeckInstance(humanDeck));
+        Reflection = new Player(CardTeam.Reflection, new DeckInstance(reflectionDeck));
+        Board = new GameBoard();
+    }
+
 }

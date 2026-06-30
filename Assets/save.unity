@@ -163,6 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556a7dd81ff820943a61b9d118e04355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  humanDeck: {fileID: 11400000, guid: e8d230e05285d9c47b62f22572dee678, type: 2}
+  reflectionDeck: {fileID: 11400000, guid: e8d230e05285d9c47b62f22572dee678, type: 2}
 --- !u!1001 &779304752
 PrefabInstance:
   m_ObjectHideFlags: 0
