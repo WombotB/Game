@@ -31,7 +31,7 @@ public class Ability
 
     public virtual void OnAttack(GameManager game, CardInstance[] targets) 
     {
-        foreach (CardInstance target in targets) { victim.Ability.OnDamage(game, Card.CurrentDamage) }
+        foreach (CardInstance target in targets) { target.Data.Ability.OnDamage(game, Card.CurrentDamage); }
     }
 
     public virtual void OnMove(GameManager game)   
