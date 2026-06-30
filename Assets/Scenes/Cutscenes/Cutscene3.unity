@@ -469,7 +469,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Fullscreen
         m_Mode: 1
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -689,138 +689,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217882419}
   m_CullTransparentMesh: 1
---- !u!1 &225266292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 225266293}
-  - component: {fileID: 225266296}
-  - component: {fileID: 225266295}
-  - component: {fileID: 225266294}
-  m_Layer: 5
-  m_Name: PlayButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &225266293
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225266292}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2027240516}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1515833, y: 0}
-  m_AnchorMax: {x: 0.86025006, y: 0.33414817}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &225266294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225266292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 225266295}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 262981258}
-        m_TargetAssemblyTypeName: Cutscene1, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &225266295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225266292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &225266296
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225266292}
-  m_CullTransparentMesh: 1
 --- !u!1 &262981253
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +700,7 @@ GameObject:
   - component: {fileID: 262981256}
   - component: {fileID: 262981255}
   - component: {fileID: 262981254}
-  - component: {fileID: 262981258}
+  - component: {fileID: 262981260}
   - component: {fileID: 262981257}
   - component: {fileID: 262981259}
   m_Layer: 0
@@ -917,30 +785,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pause
   settingsMenu: {fileID: 1414419336}
   pauseMenu: {fileID: 1588856017}
---- !u!114 &262981258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262981253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82a73988cd62c34f8c08da5f8a50444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cutscene1
-  Words: {fileID: 734129989}
-  SFXM: {fileID: 57634204}
-  playButton: {fileID: 225266292}
-  pause: {fileID: 1588856017}
-  background: {fileID: 1047103660}
-  sprite1: {fileID: 21300000, guid: 0f884c5ed79a2a4458bddb54fbc40148, type: 3}
-  sprite2: {fileID: 21300000, guid: 3e6e8d791533d43409be909cf752000f, type: 3}
-  sprite3: {fileID: 21300000, guid: 106364b1e1ae6974bb673eb9133b7c67, type: 3}
-  sprite4: {fileID: 21300000, guid: 9a82fa42d38d9e04b8b4ccbd84247a08, type: 3}
-  dialogueClosed: {fileID: 21300000, guid: 4a5f678f980c18f4fbf3093578f50644, type: 3}
-  dialogueOpened: {fileID: 21300000, guid: d02ccc3d30b40fe4589d77cc0fad8b89, type: 3}
-  dialogueTeeth: {fileID: 21300000, guid: 98e3cfa981d1cd64dabc60508f37c36a, type: 3}
 --- !u!114 &262981259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,6 +803,26 @@ MonoBehaviour:
   SoundM: {fileID: 57634204}
   MusicM: {fileID: 2043578546}
   settingsMenu: {fileID: 1414419336}
+--- !u!114 &262981260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262981253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae51af53a610e540856a021834aacfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cutscene3
+  Words: {fileID: 734129989}
+  SFXM: {fileID: 57634204}
+  playButton: {fileID: 0}
+  pause: {fileID: 1588856017}
+  background: {fileID: 1047103660}
+  dialogueClosed: {fileID: 21300000, guid: 4a5f678f980c18f4fbf3093578f50644, type: 3}
+  dialogueOpened: {fileID: 21300000, guid: d02ccc3d30b40fe4589d77cc0fad8b89, type: 3}
+  dialogueTeeth: {fileID: 21300000, guid: 98e3cfa981d1cd64dabc60508f37c36a, type: 3}
 --- !u!1 &309902826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,7 +1042,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -1461,7 +1325,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 1
@@ -1805,7 +1669,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -2030,7 +1894,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u041E\u0441\u0442\u0430\u043B\u0441\u044F \u0444\u0438\u043D\u0430\u043B\u044C\u043D\u044B\u0439
+    \u0440\u0430\u0443\u043D\u0434."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2211,7 +2076,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -2419,9 +2284,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scenes, Assembly-CSharp
-        m_MethodName: toStartMenu
+      - m_Target: {fileID: 262981257}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2707,7 +2572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f884c5ed79a2a4458bddb54fbc40148, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d02ccc3d30b40fe4589d77cc0fad8b89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2800,9 +2665,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scenes, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 262981257}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3043,7 +2908,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -3846,7 +3711,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SoundVolume
         m_Mode: 1
@@ -3948,7 +3813,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: MusicVolume
         m_Mode: 1
@@ -4056,7 +3921,6 @@ RectTransform:
   m_Children:
   - {fileID: 1047103657}
   - {fileID: 734129991}
-  - {fileID: 225266293}
   - {fileID: 1588856018}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -469,7 +469,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Fullscreen
         m_Mode: 1
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981258}
         m_TargetAssemblyTypeName: Cutscene1, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 262981256}
   - component: {fileID: 262981255}
   - component: {fileID: 262981254}
-  - component: {fileID: 262981260}
+  - component: {fileID: 262981258}
   - component: {fileID: 262981257}
   - component: {fileID: 262981259}
   m_Layer: 0
@@ -917,6 +917,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pause
   settingsMenu: {fileID: 1414419336}
   pauseMenu: {fileID: 1588856017}
+--- !u!114 &262981258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262981253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82a73988cd62c34f8c08da5f8a50444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cutscene1
+  Words: {fileID: 734129989}
+  SFXM: {fileID: 57634204}
+  playButton: {fileID: 225266292}
+  pause: {fileID: 1588856017}
+  background: {fileID: 1047103660}
+  sprite1: {fileID: 21300000, guid: 0f884c5ed79a2a4458bddb54fbc40148, type: 3}
+  sprite2: {fileID: 21300000, guid: 3e6e8d791533d43409be909cf752000f, type: 3}
+  sprite3: {fileID: 21300000, guid: 106364b1e1ae6974bb673eb9133b7c67, type: 3}
+  sprite4: {fileID: 21300000, guid: 9a82fa42d38d9e04b8b4ccbd84247a08, type: 3}
+  dialogueClosed: {fileID: 21300000, guid: 4a5f678f980c18f4fbf3093578f50644, type: 3}
+  dialogueOpened: {fileID: 21300000, guid: d02ccc3d30b40fe4589d77cc0fad8b89, type: 3}
+  dialogueTeeth: {fileID: 21300000, guid: 98e3cfa981d1cd64dabc60508f37c36a, type: 3}
 --- !u!114 &262981259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,26 +959,6 @@ MonoBehaviour:
   SoundM: {fileID: 57634204}
   MusicM: {fileID: 2043578546}
   settingsMenu: {fileID: 1414419336}
---- !u!114 &262981260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262981253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae51af53a610e540856a021834aacfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cutscene3
-  Words: {fileID: 734129989}
-  SFXM: {fileID: 57634204}
-  playButton: {fileID: 225266292}
-  pause: {fileID: 1588856017}
-  background: {fileID: 1047103660}
-  dialogueClosed: {fileID: 21300000, guid: 4a5f678f980c18f4fbf3093578f50644, type: 3}
-  dialogueOpened: {fileID: 21300000, guid: d02ccc3d30b40fe4589d77cc0fad8b89, type: 3}
-  dialogueTeeth: {fileID: 21300000, guid: 98e3cfa981d1cd64dabc60508f37c36a, type: 3}
 --- !u!1 &309902826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1178,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -1457,7 +1461,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 1
@@ -1801,7 +1805,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -2026,8 +2030,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E\u0441\u0442\u0430\u043B\u0441\u044F \u0444\u0438\u043D\u0430\u043B\u044C\u043D\u044B\u0439
-    \u0440\u0430\u0443\u043D\u0434."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2208,7 +2211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -2416,9 +2419,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scenes, Assembly-CSharp
-        m_MethodName: toStartMenu
+      - m_Target: {fileID: 262981257}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2704,7 +2707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d02ccc3d30b40fe4589d77cc0fad8b89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f884c5ed79a2a4458bddb54fbc40148, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2797,9 +2800,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Scenes, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 262981257}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3040,7 +3043,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -3843,7 +3846,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SoundVolume
         m_Mode: 1
@@ -3945,7 +3948,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 262981259}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: MusicVolume
         m_Mode: 1

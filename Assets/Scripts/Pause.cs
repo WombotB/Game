@@ -26,9 +26,13 @@ public class Pause : MonoBehaviour
         }
         opened = settingsMenu.activeSelf;
     }
-    public void Exit()
+    public void ToMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
     public void Close()
     {

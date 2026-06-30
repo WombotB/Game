@@ -35,6 +35,7 @@ public class CutsceneLost : MonoBehaviour
                 //    Words.text = "Попробуешь еще?";
                 //    break;
                 case 2:
+                    speaks = false;
                     background.sprite = dialogueClosed;
                     Words.text = "";
                     playButton.SetActive(true);
