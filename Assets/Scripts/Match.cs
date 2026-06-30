@@ -17,4 +17,10 @@ public class Match
         Board = new GameBoard();
     }
 
+    public Player GetPlayer (CardTeam team)
+    {
+        if (Player.Team == team) { return Player; }
+
+        return Reflection;
+    }
 }

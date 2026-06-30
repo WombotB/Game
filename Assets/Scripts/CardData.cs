@@ -17,5 +17,5 @@ public class CardData : ScriptableObject
     public CardWeight Weight;
     public CardClass cardClass;
 
-    public Ability Ability;
+    public AbilityData AbilityData;
 }

@@ -7,17 +7,28 @@ public class GameBoard
 {
     public CardInstance?[,] Board;
 
+    public GameBoard()
+    {
+        Board = new CardInstance?[5, 5];
+    }
+
     public bool HasCard (int row, int col) => Board[row, col] != null;
 
     public CardInstance GetCard(int row, int col) => Board[row, col]!;
 
-    public void SetCard (int row, int col, CardInstance card) { Board[row, col] = card; }
+    public void SetCard (int row, int col, CardInstance card) 
+    { 
+        Board[row, col] = card; 
+        card.Row = row;
+        card.Col = col;
+    }
 
     public void ClearCell(int row, int col) { Board[row, col] = null; }
 
-    public GameBoard()
+    public void MoveCard(int row, int col, CardInstance card)
     {
-        Board = new CardInstance?[5, 5];
+        ClearCell(card.Row, card.Col);
+        SetCard(row, col, card);
     }
 
     public CardInstance?[] GetCol(int col)
@@ -62,7 +73,9 @@ public class GameBoard
 
         for (int row = card.Row + card.Direction; row<5 && row>=0; row += card.Direction)
         {
-            if (Column[row] != null && Column[row].Team != Team) { return Column[row]; }
+            var currentCard = Column[row];
+
+            if (currentCard != null && currentCard.Team != Team) { return currentCard; }
 
             //Проверка на замок
             else if (IsCastleOnLine(card.Col) && Team == CardTeam.Reflection) { } //Заготовка для замка

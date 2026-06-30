@@ -3,7 +3,7 @@ using Enums;
 
 public class Ability
 {
-    private CardInstance Card;
+    protected CardInstance Card;
 
     public Ability(CardInstance card) {  Card = card; }
 
@@ -31,19 +31,35 @@ public class Ability
 
     public virtual void OnAttack(GameManager game, CardInstance[] targets) 
     {
-        foreach (CardInstance target in targets) { target.Data.Ability.OnDamage(game, Card.CurrentDamage); }
+        foreach (CardInstance target in targets) { target.Ability.OnDamage(game, Card.CurrentDamage); }
     }
 
     public virtual void OnMove(GameManager game)   
     {
         var Board = game.Match.Board;
+
+        int nextRow = Card.Row + Card.Direction;
+
+        if (nextRow < 0 || nextRow > 4)
+        {
+            game.Match.GetPlayer(Card.Team).Deck.Return(Card);
+            Board.ClearCell(Card.Row, Card.Col);
+            return;
+        }
+
+        Board.MoveCard(nextRow, Card.Col, Card);
     }
 
     public virtual void OnDamage(GameManager game, int damage) 
     {
-        
+        Card.CurrentHealth -= damage;
+
+        if (Card.IsDead) { Card.Ability.OnDeath(game); }
     }
 
-    public virtual void OnDeath(GameManager game)  { }
+    public virtual void OnDeath(GameManager game)  
+    {
+        game.Match.Board.ClearCell(Card.Row, Card.Col);
+    }
 
 }
