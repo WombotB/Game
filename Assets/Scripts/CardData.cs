@@ -15,7 +15,7 @@ public class CardData : ScriptableObject
     public int MaxDamage;
 
     public CardWeight Weight;
-    public CardClass cardClass;
+    public CardClass CardClass;
 
-    public Ability Ability;
+    public AbilityData AbilityData;
 }

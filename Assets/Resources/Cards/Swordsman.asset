@@ -21,3 +21,4 @@ MonoBehaviour:
   MaxDamage: 3
   Weight: 1
   cardClass: 0
+  AbilityData: {fileID: 11400000, guid: ef3c37be09f5672449dd1163314eaedc, type: 2}

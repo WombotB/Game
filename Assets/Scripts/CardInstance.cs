@@ -1,5 +1,7 @@
 using UnityEngine;
 using Enums;
+using System.Collections.Generic;
+using System;
 
 public class CardInstance
 {
@@ -16,6 +18,8 @@ public class CardInstance
     public int Col;
     public int Direction;
 
+    public Ability Ability;
+
     public bool IsDead => CurrentHealth <= 0;
 
     public CardInstance (CardData data)
@@ -24,5 +28,7 @@ public class CardInstance
 
         CurrentHealth = Data.MaxHealth;
         CurrentDamage = Data.MaxDamage;
+
+        Ability = Data.AbilityData.Create(this);
     }
 }
