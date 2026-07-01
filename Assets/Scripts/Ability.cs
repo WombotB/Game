@@ -14,7 +14,7 @@ public class Ability
     {
         var Board = game.Match.Board;
 
-        switch (Card.Data.cardClass)
+        switch (Card.Data.CardClass)
         {
             case CardClass.Melee:
                 var FrontCard = Board.GetFrontCard(Card);

@@ -4,7 +4,7 @@ using System;
 
 public class HandView : MonoBehaviour
 {
-    public Hand Hand = GameManager.Instance.Match.Player.Hand;
+    public Hand Hand;
 
     private float targetSpacing = 0f;
     private float currentSpacing = 0f;
@@ -18,10 +18,10 @@ public class HandView : MonoBehaviour
 
     public int Count => Hand.Count;
 
-    /*void Start()
+    void Start()
     {
-        
-    }*/
+        Hand = GameManager.Instance.Match.Player.Hand;
+    }
 
     void Update()
     {

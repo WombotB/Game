@@ -1,11 +1,15 @@
 using UnityEngine;
 using Enums;
+using System.Collections.Generic;
+using System;
+
 #nullable enable
 
 
 public class GameBoard
 {
     public CardInstance?[,] Board;
+    public List<CardInstance> ActiveCards = new();
 
     public GameBoard()
     {
@@ -21,9 +25,15 @@ public class GameBoard
         Board[row, col] = card; 
         card.Row = row;
         card.Col = col;
+        ActiveCards.Add(card);
     }
 
-    public void ClearCell(int row, int col) { Board[row, col] = null; }
+    public void ClearCell(int row, int col) 
+    {
+        var card = Board[row, col];
+        if (card != null) ActiveCards.Remove(card);
+        Board[row, col] = null; 
+    }
 
     public void MoveCard(int row, int col, CardInstance card)
     {
@@ -33,7 +43,6 @@ public class GameBoard
 
     public CardInstance?[] GetCol(int col)
     {
-        col--; // col starts from 1, but array index starts from 0
         CardInstance?[] result = new CardInstance?[5];
         for (int row = 0; row < 5; row++)
         {

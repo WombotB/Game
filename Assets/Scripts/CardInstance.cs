@@ -1,5 +1,7 @@
 using UnityEngine;
 using Enums;
+using System.Collections.Generic;
+using System;
 
 public class CardInstance
 {

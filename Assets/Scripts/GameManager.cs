@@ -25,18 +25,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
+        Instance = this;
     }
 
     void Start()
     {
         Match = new Match(humanDeck, reflectionDeck);
 
-        TurnManager = new TurnManager();
+        TurnManager = new TurnManager(this);
 
-        CombatResolver = new CombatResolver();
-
-        Instance = this;
+        CombatResolver = new CombatResolver(); //вероятнее всего не понадобится
     }
 
     void Update()
