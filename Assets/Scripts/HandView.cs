@@ -38,19 +38,17 @@ public class HandView : MonoBehaviour
     }
 
     public void RefreshCards()
-    {
-        // Удаляем старые CardView
+    { 
         foreach (var cv in _cardViews)
             Destroy(cv.gameObject);
         _cardViews.Clear();
 
-        // Создаём новые по текущей руке
         foreach (var card in Hand.Cards)
         {
             var go = Instantiate(cardPrefab, transform);
             var cv = go.GetComponent<CardView>();
             cv.Initialize(card);
-            cv.OnCardClicked += OnCardClicked;
+            cv.OnCardClicked += HandleCardClicked;
             _cardViews.Add(cv);
         }
 
@@ -67,11 +65,9 @@ public class HandView : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            // t от -0.5 до +0.5, у средней карты t=0
             float t = count > 1 ? (float)i / (count - 1) - 0.5f : 0f;
 
             float x = t * totalWidth;
-            // Дуга: крайние карты чуть ниже средней
             float y = -arcHeight * (4f * t * t);
 
             float angle = -currentRotation * t * 2f;
@@ -82,5 +78,5 @@ public class HandView : MonoBehaviour
         }
     }
 
-    private void OnCardClicked(CardView cv) => OnCardClicked?.Invoke(cv);
+    private void HandleCardClicked(CardView cv) => OnCardClicked?.Invoke(cv);
 }
