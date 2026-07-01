@@ -86,11 +86,11 @@ public class Cutscene1 : MonoBehaviour
             if (timer <= 0)
             {
                 timer = 0.2f;
-                //if (background.sprite == dialogueClosed) background.sprite = dialogueOpened;
-                //else if (background.sprite == dialogueOpened) background.sprite = dialogueTeeth;
-                //else background.sprite = dialogueClosed;
-                if (background.sprite == dialogueOpened) background.sprite = dialogueTeeth;
-                else background.sprite = dialogueOpened;
+                if (background.sprite == dialogueClosed) background.sprite = dialogueOpened;
+                else if (background.sprite == dialogueOpened) background.sprite = dialogueTeeth;
+                else background.sprite = dialogueClosed;
+                //if (background.sprite == dialogueOpened) background.sprite = dialogueTeeth;
+                //else background.sprite = dialogueOpened;
             }
         }
     }
