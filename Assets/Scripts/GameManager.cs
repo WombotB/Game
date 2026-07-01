@@ -18,11 +18,6 @@ public class GameManager : MonoBehaviour
         //Проверяет победу
     }
 
-    public void EndTurn()
-    {
-        //Заканчивает ход
-    }
-
     private void Awake()
     {
         Instance = this;
