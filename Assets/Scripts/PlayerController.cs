@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
     private void Deselect()
     {
         boardView.HighlightPlacementCells(false);
+        if (selectedCardView != null)
+            selectedCardView.Deselect();
         boardView.DeselectCard();
         selectedCardView = null;
     }

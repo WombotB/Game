@@ -11,6 +11,11 @@ public class GameBoard
     public CardInstance?[,] Board;
     public List<CardInstance> ActiveCards = new();
 
+    // Events for UI synchronization
+    public Action<CardInstance, int, int>? OnCardPlaced;
+    public Action<CardInstance, int, int>? OnCardRemoved;
+    public Action<CardInstance, int, int, int, int>? OnCardMoved;
+
     public GameBoard()
     {
         Board = new CardInstance?[5, 5];
@@ -26,19 +31,27 @@ public class GameBoard
         card.Row = row;
         card.Col = col;
         ActiveCards.Add(card);
+        OnCardPlaced?.Invoke(card, row, col);
     }
 
     public void ClearCell(int row, int col) 
     {
         var card = Board[row, col];
-        if (card != null) ActiveCards.Remove(card);
+        if (card != null)
+        {
+            ActiveCards.Remove(card);
+            OnCardRemoved?.Invoke(card, row, col);
+        }
         Board[row, col] = null; 
     }
 
     public void MoveCard(int row, int col, CardInstance card)
     {
+        int oldRow = card.Row;
+        int oldCol = card.Col;
         ClearCell(card.Row, card.Col);
         SetCard(row, col, card);
+        OnCardMoved?.Invoke(card, oldRow, oldCol, row, col);
     }
 
     public CardInstance?[] GetCol(int col)
